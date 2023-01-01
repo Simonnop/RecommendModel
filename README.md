@@ -1,2 +1,2 @@
 # RecommendModel
-基于内容协同的任务推荐系统
+基于NLP和KNN的任务推荐系统
