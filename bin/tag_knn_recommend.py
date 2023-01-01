@@ -76,6 +76,6 @@ def find_similar_mission(title_str, num):
 # 需要的个数
 require_num = 5
 # 测试输出
-find_similar_mission('喻园管理论坛: 重大工程中的使命导向型创新--以都江堰系统工程为例', require_num)
+find_similar_mission('喻园管理论坛: Intelligent Simulation Optimization: An Example in Multi-fidelity Simulation Modeling', require_num)
 find_similar_mission('二十大宣讲', require_num)
 find_similar_mission('管理学院第二届工商管理学科高端论坛系列活动: 学科建设座谈会', require_num)
