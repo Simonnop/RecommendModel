@@ -11,11 +11,9 @@ try:
 except Exception:
     print("Unable to connect to the server.")
 
-collection_user = client.get_database("NIC").get_collection("User")
+collection_user = client.get_database("NIC").get_collection("Mission")
 
-for column in collection_user.find():
-    for mission_id in column.get("missionTaken"):
-        print(mission_id)
+
 
 
 
