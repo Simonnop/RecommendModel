@@ -52,7 +52,7 @@ distances, indices = calcu_nbr.kneighbors(dist_matrix)
 # indices: 对应序号
 
 # 根据矩阵进行寻找
-def find_similar_mission(title_str, num):
+def find_similar_mission(title_str, num, max_distance):
     similar_mission_title_list = []
     my_index = title_list.index(title_str)
     print("为 " + title_str + " 寻找相似任务: " + str(title_with_tags[title_str]))
@@ -62,7 +62,7 @@ def find_similar_mission(title_str, num):
         if indices[my_index][pointer] == my_index:
             pointer += 1
             continue
-        elif distances[my_index][pointer] > 1.5:
+        elif distances[my_index][pointer] > max_distance:
             break
         else:
             similar_mission_title_list.append(title_list[indices[my_index][pointer]])
@@ -75,7 +75,14 @@ def find_similar_mission(title_str, num):
 
 # 需要的个数
 require_num = 5
+max_distance = 1.5
 # 测试输出
-find_similar_mission('喻园管理论坛: Intelligent Simulation Optimization: An Example in Multi-fidelity Simulation Modeling', require_num)
-find_similar_mission('二十大宣讲', require_num)
-find_similar_mission('管理学院第二届工商管理学科高端论坛系列活动: 学科建设座谈会', require_num)
+find_similar_mission(
+    '喻园管理论坛: Intelligent Simulation Optimization: An Example in Multi-fidelity Simulation Modeling',
+    require_num, max_distance)
+find_similar_mission(
+    '二十大宣讲',
+    require_num, max_distance)
+find_similar_mission(
+    '管理学院第二届工商管理学科高端论坛系列活动: 学科建设座谈会',
+    require_num, max_distance)
